@@ -1,0 +1,51 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["src/*"],
+      "@/*": ["src/*"],
+      "@/react/*": ["src/react/*"],
+      "@/lib/*": ["src/lib/*"],
+      "openfav-integration": ["./vendor/integrations/index.ts"],
+      "openfav:config": ["src/config.ts"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["node", "astro/client"]
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.d.ts",
+    "vendor/integrations/**/*.ts",
+    "vendor/integrations/**/*.js",
+    "vite.config.*",
+    "astro.config.*"
+  ],
+  "typeRoots": [
+    "./node_modules/@types",
+    "./src/types"
+  ],
+  "exclude": [
+    "dist/",
+    "node_modules/"
+  ]
+}
