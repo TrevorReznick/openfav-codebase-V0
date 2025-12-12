@@ -16,7 +16,8 @@
     "astro": "astro",
     "test": "vitest",
     "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "migrate:tokens": "node src/tokens/generate-tokens-ts.js"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",
