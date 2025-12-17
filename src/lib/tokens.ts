@@ -9,12 +9,8 @@ const colors = {
   'border': '0 0% 100% / 0.1'
 } as const;
 
-const typography = {
-} as const;
-
-const spacing = {
-
-} as const;
+const typography = {} as const;
+const spacing = {} as const;
 
 export const designTokens = {
   colors,
@@ -26,12 +22,13 @@ export const colorTokens = colors;
 export const typographyTokens = typography;
 export const spacingTokens = spacing;
 
-export const getSpacing = (key) => {
-  return `var(--spacing-${key})`;
-};
-
+// Utility functions senza TypeScript types
 export const getColor = (key) => {
   return `var(--color-${key})`;
+};
+
+export const getSpacing = (key) => {
+  return `var(--spacing-${key})`;
 };
 
 export default designTokens;
