@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigation } from '@/react/hooks/useNavigation';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/react/components/Navbar';
 import { Rocket, Zap, Box, Trophy } from 'lucide-react';
 
@@ -14,17 +14,17 @@ const FeatureCard: React.FC<{
   title, 
   description 
 }) => (
-    <div className="p-6 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors">
-      <div className="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-primary" />
-      </div>
-      <h3 className="text-lg font-semibold mb-2 text-card-foreground">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
+  <div className="p-6 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 transition-colors">
+    <div className="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+      <Icon className="h-6 w-6 text-primary" />
     </div>
+    <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
+    <p className="text-white/70">{description}</p>
+  </div>
 );
 
 const Index: React.FC = () => {
-  const { navigate } = useNavigation();
+  const navigate = useNavigate();
   
   const features = [
     {
@@ -72,7 +72,7 @@ const Index: React.FC = () => {
 
         {/* Features Section */}
         <section className="py-16">
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Amazing Features</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Amazing Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <FeatureCard 

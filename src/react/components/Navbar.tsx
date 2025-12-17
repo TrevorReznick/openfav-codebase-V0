@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

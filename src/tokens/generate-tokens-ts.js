@@ -30,17 +30,8 @@ const getTokensTemplate = (colors, spacing, typography) => {
   });
   result += '} as const;\n\n';
 
-  result += 'const typography = {\n';
-  result += buildObjectContent(typography);
-  result += '} as const;\n\n';
-
-  result += 'const spacing = {\n';
-  result += buildObjectContent(spacing);
-  result += '} as const;\n\n';
-
-  result += 'type ColorToken = keyof typeof colors;\n';
-  result += 'type SpacingToken = keyof typeof spacing;\n';
-  result += 'type TypographyToken = keyof typeof typography;\n\n';
+  result += 'const typography = {} as const;\n';
+  result += 'const spacing = {} as const;\n\n';
 
   result += 'export const designTokens = {\n';
   result += '  colors,\n';
@@ -52,12 +43,12 @@ const getTokensTemplate = (colors, spacing, typography) => {
   result += 'export const typographyTokens = typography;\n';
   result += 'export const spacingTokens = spacing;\n\n';
 
-  result += '// Utility functions con TypeScript types\n';
-  result += 'export const getColor = (key: ColorToken): string => {\n';
+  result += '// Utility functions senza TypeScript types\n';
+  result += 'export const getColor = (key) => {\n';
   result += '  return `var(--color-${key})`;\n';
   result += '};\n\n';
 
-  result += 'export const getSpacing = (key: SpacingToken): string => {\n';
+  result += 'export const getSpacing = (key) => {\n';
   result += '  return `var(--spacing-${key})`;\n';
   result += '};\n\n';
 
@@ -70,52 +61,16 @@ const getTokensTemplate = (colors, spacing, typography) => {
  * Genera il contenuto completo di tokens.ts
  */
 function generateTokensTsFile(mappedColors) {
-  // Colori Shadcn + custom
+  // Solo i 9 colori essenziali come migration-dev-V0
   const colors = {
-    // Primary colors
-    primary: mappedColors.primary,
-    'primary-foreground': mappedColors['primary-foreground'],
-    'primary-hover': mappedColors['primary-hover'],
-
-    // Secondary colors
-    secondary: mappedColors.secondary,
-    'secondary-foreground': mappedColors['secondary-foreground'],
-
-    // Background colors
     background: mappedColors.background,
     foreground: mappedColors.foreground,
-
-    // Muted colors
-    muted: mappedColors.muted,
-    'muted-foreground': mappedColors['muted-foreground'],
-
-    // Border and input
-    border: mappedColors.border,
-    input: mappedColors.input,
-    ring: mappedColors.ring,
-
-    // Additional colors
-    destructive: mappedColors.destructive,
-    'destructive-foreground': mappedColors['destructive-foreground'],
+    primary: mappedColors.primary,
+    'primary-hover': mappedColors['primary-hover'],
+    secondary: mappedColors.secondary,
     accent: mappedColors.accent,
-    'accent-foreground': mappedColors['accent-foreground'],
     card: mappedColors.card,
-    'card-foreground': mappedColors['card-foreground'],
-
-    // Popover colors
-    popover: mappedColors.popover,
-    'popover-foreground': mappedColors['popover-foreground'],
-
-    // Custom colors mantenuti per retrocompatibilità
-    DEFAULT: mappedColors.primary,
-    hover: mappedColors['primary-hover'],
-    'background-color': mappedColors.background,
-    'text-color': mappedColors.foreground,
-    'primary-color': mappedColors.primary,
-    'secondary-color': mappedColors.secondary,
-    'accent-color': mappedColors.accent,
-    'card-bg': mappedColors.card,
-    'card-border': mappedColors.border
+    border: mappedColors.border
   };
 
   // Typography (placeholder - da espandere se necessario)
