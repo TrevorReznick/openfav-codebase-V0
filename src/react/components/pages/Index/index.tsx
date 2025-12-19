@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '@/react/components/Navbar';
 import { Rocket, Zap, Box, Trophy } from 'lucide-react';
 
@@ -24,8 +23,6 @@ const FeatureCard: React.FC<{
 );
 
 const Index: React.FC = () => {
-  const navigate = useNavigate();
-  
   const features = [
     {
       icon: Rocket,
@@ -62,12 +59,12 @@ const Index: React.FC = () => {
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             The modern way to manage and share your favorite links and resources.
           </p>
-          <button 
-            onClick={() => navigate('/auth')}
-            className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+          <a
+            href="/auth"
+            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
           >
             Get Started
-          </button>
+          </a>
         </section>
 
         {/* Features Section */}
