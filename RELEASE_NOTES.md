@@ -1,4 +1,11 @@
-# Release v0.1.0
+# Release v0.2.0
+
+## 🚨 Breaking Changes
+
+- **Design Tokens Refactor**: Rinominate le chiavi colori (`primary-color` → `primary`, `background-color` → `background`)
+- **CSS Variables**: Rimossi i prefissi `--color-` dalle variabili CSS (usa direttamente `--primary`)
+- **Spacing System**: Spacing ora popolato con valori reali (era precedentemente vuoto)
+- **API Changes**: `getColor()` e `getSpacing()` ora richiedono chiavi tipizzate
 
 ## 🚀 New Features
 
@@ -56,17 +63,17 @@ This release includes updates to various dependencies including:
 
 ---
 
-**Full Changelog**: [View all commits](https://github.com/TrevorReznick/openfav-codebase-V0/compare/0.0.3...v0.1.0)
+**Full Changelog**: [View all commits](https://github.com/TrevorReznick/openfav-codebase-V0/compare/0.0.3...v0.2.0)
 
 ---
 
 To update your project to this version:
 
 ```bash
-npm install openfav-init@0.1.0
+npm install openfav-init@0.2.0
 ```
 
 Or if using yarn:
 
 ```bash
-yarn add openfav-init@0.1.0
+yarn add openfav-init@0.2.0
