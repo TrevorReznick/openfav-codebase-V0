@@ -3,3 +3,5 @@ dist/
 .vercel/
 src/.DS_Store
 .astro/
+.DS_Store
+**/.DS_Store
