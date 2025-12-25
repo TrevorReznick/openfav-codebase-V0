@@ -1,5 +1,9 @@
 # Release v0.2.0
 
+# Changelog dopo v0.2.0
+
+- OPM-7 feat(template): aggiunto script per preparare il template V6 con commenti @inject (661f678) [default2368]
+
 ## 🚨 Breaking Changes
 
 - **Design Tokens Refactor**: Rinominate le chiavi colori (`primary-color` → `primary`, `background-color` → `background`)
